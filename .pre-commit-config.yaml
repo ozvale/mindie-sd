@@ -9,7 +9,7 @@ ci:
 repos:
   # pre-commit 基础检查
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v6.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -24,7 +24,7 @@ repos:
 # -------------------------- Python 核心检查 --------------------------
   # Ruff：Python 代码检查+格式化
   - repo: https://gitcode.com/gh_mirrors/ru/ruff-pre-commit
-    rev: v0.14.14
+    rev: v0.16.4
     hooks:
       - id: ruff-check
         args: [--output-format, github, --fix]
@@ -34,7 +34,7 @@ repos:
 
   # codespell：注释/文档拼写检查（忽略项目专有名词）
   - repo: https://gitcode.com/gh_mirrors/co/codespell
-    rev: v2.4.1
+    rev: v2.4.3
     hooks:
       - id: codespell
         args: [
@@ -46,7 +46,7 @@ repos:
 
   # typos：代码标识符拼写检查
   - repo: https://gitcode.com/gh_mirrors/ty/typos
-    rev: v1.32.0
+    rev: v1
     hooks:
       - id: typos
         args: ["--force-exclude", "--config", "pre-commit/typos.toml"]
@@ -54,7 +54,7 @@ repos:
 #--------------- C++ 核心检查 ---------------------------------------------
   # clang-format：C/C++ 代码格式化
   - repo: https://github.com/pre-commit/mirrors-clang-format
-    rev: v18.1.8
+    rev: v23.1.0
     hooks:
       - id: clang-format
         files: \.(c|h|cpp|hpp|cc|hh|cxx|hxx)$
@@ -64,7 +64,7 @@ repos:
         
   # markdownlint：Markdown 格式检查（仅CI手动执行）
   - repo: https://gitcode.com/gh_mirrors/ma/markdownlint-cli
-    rev: v0.46.0
+    rev: v0.49.1
     hooks:
       - id: markdownlint
         exclude: '.*\.inc\.md$|.*report_template\.md$|.*contributors\.md$|.*PULL_REQUEST_TEMPLATE\.md$'
